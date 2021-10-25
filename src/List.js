@@ -39,9 +39,24 @@ export default class List extends Component{
         this.setState({removeCount: this.state.removeCount + 1});
     }
 
+    renderListLength(){
+        return <div>Длина массива: {this.state.list.length}</div>
+    }
+
+    renderAddCounter(){
+        return <div>Количество кликов на кнопку добавления: {this.state.addCount}</div>
+    }
+
+    renderRemoveCounter(){
+        return <div>Количество кликов на кнопку удаления: {this.state.removeCount}</div>
+    }
+
     render(){
         return(
             <div>
+                {this.renderListLength()}
+                {this.renderAddCounter()}
+                {this.renderRemoveCounter()}
                 {this.renderList()}
                 {this.renderButtonAdd()}
                 {this.renderButtonRemove()}
