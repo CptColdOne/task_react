@@ -24,7 +24,7 @@ export default class List extends Component{
     }
 
     renderButtonAdd(){
-        return <input type="button" value="Добавить элемент" onClick={this.addElem}></input>;
+        return <div style={{padding: '10px'}}><input type="button" value="Добавить элемент" onClick={this.addElem}></input></div>;
     }
 
     addElem= () =>{
@@ -33,11 +33,12 @@ export default class List extends Component{
     }
 
     renderButtonRemove(){
-        return <input type="button" value="Удалить элемент" onClick={this.removeElem}></input>;
+        return <div style={{padding: '10px'}}><input type="button" value="Удалить элемент" onClick={this.removeElem}></input></div>;
     }
 
-    removeElem(){
-        
+    removeElem= () =>{
+
+        this.setState({removeCount: ++this.state.removeCount});
     }
 
     render(){
