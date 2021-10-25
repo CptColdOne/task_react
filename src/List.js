@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { ListElem } from "./ListElem";
 
 export default class List extends Component{
     constructor(){
@@ -12,7 +13,7 @@ export default class List extends Component{
     }
     
     renderListItem({item, index}){
-        return <div key={item.title}>{item.title}</div>;
+        return <div key={item.title}><ListElem title={item.title}/></div>;
     }
 
     renderList(){
@@ -22,7 +23,7 @@ export default class List extends Component{
     }
 
     renderButtonAdd(){
-        return <div style={{padding: '10px'}}><input type="button" value="Добавить элемент" onClick={this.addElem}></input></div>;
+        return <div style={{padding: '2px'}}><input style={{cursor: 'pointer'}} type="button" value="Добавить элемент" onClick={this.addElem}></input></div>;
     }
 
     addElem= () =>{
@@ -31,7 +32,7 @@ export default class List extends Component{
     }
 
     renderButtonRemove(){
-        return <div style={{padding: '10px'}}><input type="button" value="Удалить элемент" onClick={this.removeElem}></input></div>;
+        return <div style={{padding: '2px'}}><input style={{cursor: 'pointer'}} type="button" value="Удалить элемент" onClick={this.removeElem}></input></div>;
     }
 
     removeElem= () =>{

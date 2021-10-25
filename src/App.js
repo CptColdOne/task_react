@@ -1,6 +1,5 @@
 import './App.css';
 import List from "./List.js";
-import ListElem from "./ListElem.js";
 
 function App() {
   return (
